@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module RestorerPanel
   class RestorerController < ApplicationController
     before_action :authenticate_restorer!
     def index
       @restaurant = Restaurant.all
     end
-      #def index; end
+    # def index; end
   end
 end

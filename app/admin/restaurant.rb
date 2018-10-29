@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Restaurant do
-    permit_params :name, :address
-  end
+  permit_params :name, :address
+end

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 Rails.application.routes.draw do
   devise_for :restorers
@@ -7,6 +8,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :restorer_panel, path: 'restorer' do
-     root to: 'restorer#index'
+    root to: 'restorer#index'
   end
 end
