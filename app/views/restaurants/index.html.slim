@@ -1,5 +1,6 @@
 h3 Restauracje
 
-- @restaurant.each do |rest|
-  p
-    = rest.name
+ul class="list-group"
+  - @restaurant.each do |rest|
+    li class="list-group-item"  = rest.name
+
