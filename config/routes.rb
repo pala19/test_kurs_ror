@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   namespace :restorer_panel, path: 'restorer' do
     root to: 'restorer#index'
   end
+  resources :restaurants
 end
