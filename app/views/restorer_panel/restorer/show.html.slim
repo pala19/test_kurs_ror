@@ -1,0 +1,7 @@
+=link_to restorer_panel_restorer_index_path do
+  strong Wróc do panelu użytkownika
+hr
+    = @restaurant.name
+ul class="list-group"
+  - @table.each do |rest|
+    li class="list-group-item"  = rest.number
