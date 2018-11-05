@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'pages#home'
 
-  namespace :restorer_panel do#, path: 'restorer' do
+  namespace :restorer_panel do # , path: 'restorer' do
     resources :restorer
   end
   resources :restaurants
