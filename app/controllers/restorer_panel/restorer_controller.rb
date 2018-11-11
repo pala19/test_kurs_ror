@@ -9,8 +9,7 @@ module RestorerPanel
 
     def show
       @restaurant = Restaurant.find(params[:id])
-      @table = Table.where(restaurant_id: @restaurant.id)
-      # @table = Table.new(restaurant: @restaurant)
+      @tables = @restaurant.tables
     end
   end
 end
