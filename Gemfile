@@ -6,7 +6,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'activeadmin'
+gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
+gem 'jquery-rails'
 gem 'rubocop'
 gem 'slim-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

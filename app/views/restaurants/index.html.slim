@@ -1,3 +1,6 @@
- @restaurants.each do |restaurant|
-  p
-    restaurant.name
+h3 Restauracje
+
+ul class="list-group"
+  - @restaurants.each do |rest|
+    li class="list-group-item"  = rest.name
+
