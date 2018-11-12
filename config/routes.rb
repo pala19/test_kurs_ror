@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :restorer
   end
   resources :restaurants
+  resources :tables
 end
