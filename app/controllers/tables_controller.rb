@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TablesController < ApplicationController
   def create
     @table = Table.new(params.require(:table).permit(:number, :restaurant_id))
@@ -8,6 +10,7 @@ class TablesController < ApplicationController
                      end
     redirect_to restorer_panel_restorer_path(@table.restaurant_id)
   end
+
   def destroy
     @table = Table.find(params[:id])
     path = @table.restaurant_id
@@ -17,6 +20,5 @@ class TablesController < ApplicationController
                        @table.errors.full_messages.join('. ')
                      end
     redirect_to restorer_panel_restorer_path(path)
-
   end
 end

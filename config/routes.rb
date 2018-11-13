@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'restaurants#index'
 
-  namespace :restorer_panel , path: 'restorer' do
+  namespace :restorer_panel, path: 'restorer' do
     resources :restorer
   end
   resources :restaurants
