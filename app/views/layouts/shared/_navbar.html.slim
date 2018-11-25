@@ -1,0 +1,12 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  a.navbar-brand href=root_path TestApp
+  button.navbar-toggler aria-controls="navbarNav" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNav" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    ul.navbar-nav
+      li.nav-item class=(current_page?(restaurants_path) ? 'active' : '')
+        a.nav-link href=restaurants_path
+          | Restaurants
+      li.nav-item class=(current_page?(restorer_panel_restorer_index_path) ? 'active' : '')
+        a.nav-link href=restorer_panel_restorer_index_path
+          | Restorer Panel
