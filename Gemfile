@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
-
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
