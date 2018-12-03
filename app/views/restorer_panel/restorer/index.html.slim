@@ -7,3 +7,15 @@ ul class="list-group"
   - @restaurant.each do |rest|
      li class="list-group-item"
         a href = restorer_panel_restorer_path(rest) = rest.name
+br
+=form_for @newrestaurant do |f|
+  = f.hidden_field :restorer_id
+  .form-group
+    label Nazwa restauracji
+    = f.text_field :name, rows: 1, class: 'form - control'
+  .form-group
+    label Adres
+    = f.text_field :address, rows: 2, class: 'form - control'
+  .form-group
+    = f.submit 'Dodaj nową restaurację', class: 'btn btn-primary'
+

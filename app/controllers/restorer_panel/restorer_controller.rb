@@ -4,7 +4,8 @@ module RestorerPanel
   class RestorerController < ApplicationController
     before_action :authenticate_restorer!
     def index
-      @restaurant = Restaurant.where(restorer_id: current_restorer.id)
+      @restaurant = Restaurant.where(restorer_id: current_restorer.id).where(:accepted => true)
+      @newrestaurant = Restaurant.new
     end
 
     def show
