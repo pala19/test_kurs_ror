@@ -4,11 +4,12 @@ hr
     = @restaurant.name
 ul class="list-group"
   - @tables.each do |rest|
-    li class="list-group-item"  = rest.number
-    =link_to 'usuń', table_path(rest), method: :delete, class: 'btn btn-small btn-danger'
+    li class="list-group-item"
+      =rest.number
+      =link_to 'usuń', table_path(rest), method: :delete, class: 'btn btn-small btn-warning'
 = form_for @table do |f|
   =f.hidden_field :restaurant_id
   .form-group
-    = f.text_field :number, rows: 1, class: 'form - control'
+    = f.text_field :number, rows: 1, class: 'form-control'
   .form-group
     = f.submit 'Dodaj stolik', class: 'btn btn-primary'
