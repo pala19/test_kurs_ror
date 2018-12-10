@@ -1,1 +1,12 @@
 h1  Rezerwacje
+form action=reservations_path
+ .form-group
+   label for="restaurantSelect"  Select restaurant
+   select#restaurantSelect.form-control onchange='this.form.submit()' name='restaurant_id'
+       - @restaurants.each do |rest|
+           option value=rest.id 
+             = rest.name
+
+- if @available_tables
+  - @available_tables.each do |table|
+    p= table.number
