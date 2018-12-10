@@ -6,4 +6,5 @@ class Restorer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :restaurants
+  validates_presence_of :name, :surname
 end
