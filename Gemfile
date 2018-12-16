@@ -7,6 +7,7 @@ ruby '2.5.1'
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
+gem 'active_model_serializers'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
