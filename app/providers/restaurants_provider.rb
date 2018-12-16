@@ -10,7 +10,7 @@ class RestaurantsProvider
     @results = if key.blank?
                  []
                else
-                 @results.where('lower(name) like ?', "%#{key.downcase}%")
+                 @results.where('lower(name) like ?', "%#{key[:key].downcase}%")
                end
   end
 end
