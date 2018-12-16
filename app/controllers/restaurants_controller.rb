@@ -2,7 +2,8 @@
 
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.where(accepted: true)
+    #@restaurants = Restaurant.where(accepted: true)
+    @restaurants = RestaurantsProvider.new(params[:key]).results
   end
 
   def create

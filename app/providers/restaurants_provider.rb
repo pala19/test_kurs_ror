@@ -2,7 +2,7 @@ class RestaurantsProvider
   attr_reader :results
 
   def initialize(key)
-    @results = Restaurant.all
+    @results = Restaurant.where(accepted: true)
     filter_by_key(key)
   end
 
@@ -10,7 +10,7 @@ class RestaurantsProvider
     @results = if key.blank?
                  []
                else
-                 @results.where('lower(name) like ?', "%#{key[:key].downcase}%")
+                 @results.where('lower(name) like ?', "%#{key.downcase}%")
                end
   end
 end
