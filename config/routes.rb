@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   namespace :restorer_panel, path: 'restorer' do
     resources :restorer
   end
+  namespace :api do
+    get '/restorers/email_exists', to: 'restorers#email_exists'
+
+    resources :restaurants, only: [:index]
+  end
   resources :restaurants
   resources :tables
   resources :reservations
