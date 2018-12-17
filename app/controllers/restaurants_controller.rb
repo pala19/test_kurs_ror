@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
     @restaurants = RestaurantsProvider.new(params[:key]).results
   end
 
+  # rubocop:disable Metrics/AbcSize
   def create
     @restaurant = Restaurant.new(params.require(:restaurant).permit(:name, :address).merge(restorer_id: current_restorer.id))
     flash[:notice] = if @restaurant.save
