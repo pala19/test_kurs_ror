@@ -2,7 +2,7 @@
 
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.where(:accepted => true)
+    @restaurants = Restaurant.where(accepted: true)
   end
 
   def create
@@ -13,5 +13,5 @@ class RestaurantsController < ApplicationController
                        @restaurant.errors.full_messages.join('. ')
                      end
     redirect_to restorer_panel_restorer_index_path(@restaurant.restorer_id)
-    end
+  end
 end

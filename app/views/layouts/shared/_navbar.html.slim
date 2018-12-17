@@ -10,8 +10,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
       li.nav-item class=(current_page?(restorer_panel_restorer_index_path) ? 'active' : '')
         a.nav-link href=restorer_panel_restorer_index_path
           | Restorer Panel
+	  li.nav-item class=(current_page?(reservations_path) ? 'active' : '')
+        a.nav-link href=reservations_path
+          | New reservation
+
+
     ul.navbar-nav.ml-auto
       li.nav-item
         - if restorer_signed_in?
+          a.nav-link href=edit_restorer_registration_path Edit profile
+      li.nav-item
+        - if restorer_signed_in?
           a.nav-link.disabled data-method='delete' href=destroy_restorer_session_path Logout
-      
+
