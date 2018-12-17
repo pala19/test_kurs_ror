@@ -6,6 +6,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 group :development, :test do
   gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
 end
 gem 'pg_search'
 gem 'kaminari'
@@ -15,7 +18,6 @@ gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
 gem 'jquery-rails'
-gem 'rails-controller-testing'
 gem 'rubocop'
 gem 'slim-rails'
 gem 'sprockets-rails'
