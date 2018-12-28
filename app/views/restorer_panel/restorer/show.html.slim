@@ -13,3 +13,23 @@ ul class="list-group"
     = f.text_field :number, rows: 1, class: 'form-control'
   .form-group
     = f.submit 'Dodaj stolik', class: 'btn btn-primary'
+hr
+
+strong Menu restauracji
+ul class="list-group"
+    - @menu_item.each do |item|
+      li class="list-group-item"
+        = item.name
+        = item.price
+        = link_to 'usuń', menu_item_path(item), method: :delete, class: 'btn btn-small btn-warning'
+hr
+strong Dodaj do menu
+=form_for @new_menu do |f|
+  = f.hidden_field :menu_id
+  .form-group
+    = f.text_field :name, rows: 1, class: 'form-control'
+  .form-group
+    = f.text_field :price_cents, rows: 1, class: 'form-control'
+  .form-group
+    = f.submit 'Dodaj', class: 'btn btn-primary'
+
