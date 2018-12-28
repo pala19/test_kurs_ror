@@ -1,0 +1,15 @@
+h1 =@restaurant.name
+hr
+h2 Menu restauracji
+table class="table"
+  thread
+    tr
+      th #
+      th Potrawa
+      th Cena
+    tbody
+      - @menu_item.each do |item|
+        tr
+          th scope="row" =item.id
+          td =item.name
+          td =item.price

@@ -16,12 +16,21 @@ ul class="list-group"
 hr
 
 strong Menu restauracji
-ul class="list-group"
-    - @menu_item.each do |item|
-      li class="list-group-item"
-        = item.name
-        = item.price
-        = link_to 'usuń', menu_item_path(item), method: :delete, class: 'btn btn-small btn-warning'
+table class="table"
+  thread
+    tr
+      th #
+      th Potrawa
+      th Cena
+      th X
+    tbody
+      - @menu_item.each do |item|
+        tr
+          th scope="row" =item.id
+          td =item.name
+          td =item.price
+          td =link_to 'usuń', menu_item_path(item), method: :delete, class: 'btn btn-small btn-warning'
+
 hr
 strong Dodaj do menu
 =form_for @new_menu do |f|
