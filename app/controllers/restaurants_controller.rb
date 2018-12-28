@@ -16,16 +16,15 @@ class RestaurantsController < ApplicationController
                      end
     redirect_to restorer_panel_restorer_index_path(@restaurant.restorer_id)
   end
+
   def show
     @restaurant = Restaurant.find(params[:id])
-    menu = Menu.where(:restaurant_id => @restaurant.id).first
+    menu = Menu.where(restaurant_id: @restaurant.id).first
     if menu.nil?
       menu = Menu.new(restaurant_id: @restaurant.id)
-      if !menu.save
-        menu.errors.full_messages.join('. ')
-      end
+      menu.errors.full_messages.join('. ') unless menu.save
     end
-    @menu_item = MenuItem.where(:menu_id => menu.id)
+    @menu_item = MenuItem.where(menu_id: menu.id)
     @new_menu = MenuItem.new(menu: menu)
   end
 end
