@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   end
   resources :restaurants
   resources :tables
-  resources :reservations
+
+  resources :reservations do
+    collection do
+      get :time
+    end
+  end
   resources :menu_items
 end

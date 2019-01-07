@@ -1,3 +1,5 @@
+require 'date'
+
 class ReservationsController < ActionController::Base
   def create
     @reservation = Reservation.new(params.require(:begin, :end).permit(:table_id))
@@ -12,5 +14,13 @@ class ReservationsController < ActionController::Base
   def index
     @restaurants = Restaurant.where(accepted: true)
     @available_tables = @restaurants.find(params[:restaurant_id]).tables if params[:restaurant_id]
+  end
+
+  def time
+    @table = Table.find(params[:table_id])
+    @restaurant = Restaurant.find(@table.restaurant_id)
+    @reservations = @table.reservations
+    @day = Date.strptime(params[:day], '%d/%m/%Y')
+    @newreservation = Reservation.new
   end
 end

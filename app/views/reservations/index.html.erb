@@ -12,12 +12,16 @@
 </form>
 <%end%>
 
-<form action='reservations' class=form-group>
+<form action='reservations/time' class=form-group>
     <% if @available_tables %>
-        <select class=form-control id=tableSelect onchange='this.form.submit()' name='table_id'>
+        <label for=tableSelect>Choose table</label>
+        <select class=form-control id=tableSelect name='table_id'>
             <% @available_tables.each do |table| %>
                 <option value= <%=table.id%> ><%=table.number%></option>
             <%end%>
         </select>
+        <label for="day"> Please enter the day: </label>
+        <input id="day" type="text" name="day" placeholder="dd/mm/yyyy">
+        <button type="submit" >Submit</button>
     <%end%>
 </form>
