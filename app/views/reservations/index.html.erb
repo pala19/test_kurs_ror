@@ -1,0 +1,23 @@
+<h1>  Rezerwacje </h1>
+<% if not @available_tables %>
+<form action='reservations' class=form-group>
+   <label for="restaurantSelect"> Select restaurant </label> 
+   <select class=form-control id=restaurantSelect onchange='this.form.submit()' name='restaurant_id'>
+       <% @restaurants.each do |rest| %>
+           <option value= <%=rest.id%> >
+             <%= rest.name %>
+            </option>
+        <% end %>
+    </select>
+</form>
+<%end%>
+
+<form action='reservations' class=form-group>
+    <% if @available_tables %>
+        <select class=form-control id=tableSelect onchange='this.form.submit()' name='table_id'>
+            <% @available_tables.each do |table| %>
+                <option value= <%=table.id%> ><%=table.number%></option>
+            <%end%>
+        </select>
+    <%end%>
+</form>
