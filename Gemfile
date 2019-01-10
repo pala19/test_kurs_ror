@@ -5,13 +5,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.8'
 end
+gem 'active_model_serializers'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
 gem 'devise'
 gem 'jquery-rails'
-gem 'rails-controller-testing'
+gem 'kaminari'
+gem 'pg_search'
+gem 'rails-erd'
 gem 'rubocop'
 gem 'slim-rails'
 gem 'sprockets-rails'
