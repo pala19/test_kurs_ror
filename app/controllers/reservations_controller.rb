@@ -1,6 +1,6 @@
 require 'date'
+class ReservationsController < ApplicationController
 
-class ReservationsController < ActionController::Base
   def create
     @reservation = Reservation.new(params.require(:begin, :end).permit(:table_id))
     flash[:notice] = if @reservation.save
