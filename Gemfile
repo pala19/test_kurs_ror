@@ -10,6 +10,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.8'
 end
+gem 'bootstrap4-datetime-picker-rails'
 gem 'active_model_serializers'
 gem 'activeadmin'
 gem 'bootstrap', '~> 4.1.3'
